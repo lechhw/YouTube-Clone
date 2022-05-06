@@ -80,3 +80,16 @@
 .login_button .span {
   margin-left: 8px;
 }
+
+/* side menu */
+.side_menu {
+  position: absolute;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
