@@ -1,0 +1,82 @@
+.header,
+.logo,
+.input_group {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+  padding: 5px 20px;
+  height: 61px;
+  background-color: #fff;
+  border-bottom: 1px solid #efefef;
+  z-index: 10;
+}
+
+.menu_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 23px;
+  padding: 5px 12px;
+}
+
+.logo_img {
+  display: block;
+  position: relative;
+  top: -2px;
+}
+
+.input_group {
+  width: 40%;
+  height: 38px;
+}
+
+.input {
+  flex-basis: 100%;
+  height: 100%;
+  padding: 5px 20px;
+  margin: 0;
+  border: 1px solid #efefef;
+  font-size: 1.1rem;
+  outline: none;
+}
+
+.search_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: 100%;
+  background-color: #efefef;
+  transition: transform 200ms ease-in-out;
+}
+
+.search_button:active {
+  transform: scale(0.98);
+}
+
+.search_button img {
+  display: block;
+  width: 80%;
+}
+
+.login_button {
+  font-size: 16px;
+  padding: 0 8px;
+  height: 38px;
+  border: 1px solid #065fd4;
+  color: #065fd4;
+  transition: transform 200ms ease-in-out;
+}
+
+.login_button:active {
+  transform: scale(0.98);
+}
+
+.login_button .span {
+  margin-left: 8px;
+}
