@@ -5,6 +5,11 @@ const SearchHeader = ({ onSearch, onClickLogo }) => {
   const inputRef = React.createRef();
   const [openSideMenu, setOpenSideMenu] = useState(false);
 
+  const returnToHome = () => {
+    setOpenSideMenu(false);
+    onClickLogo();
+  };
+
   const toggleSideMenu = () => {
     setOpenSideMenu(openSideMenu ? false : true);
   };
@@ -72,7 +77,7 @@ const SearchHeader = ({ onSearch, onClickLogo }) => {
         className={openSideMenu ? styles.sidebar_show : styles.sidebar_hide}
       >
         <ul className={styles.list}>
-          <li className={styles.menu}>
+          <li className={styles.menu} onClick={returnToHome}>
             <i className="fa-solid fa-house"></i>
             <span>홈</span>
           </li>
@@ -86,7 +91,7 @@ const SearchHeader = ({ onSearch, onClickLogo }) => {
           </li>
         </ul>
 
-        <div className={styles.overlay}></div>
+        <div className={styles.overlay} onClick={toggleSideMenu}></div>
       </aside>
     </>
   );
