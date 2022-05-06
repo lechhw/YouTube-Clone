@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import SideMenu from '../side_menu/side_menu';
 import styles from './search_header.module.css';
 
 const SearchHeader = ({ onSearch, onClickLogo }) => {
@@ -68,12 +67,26 @@ const SearchHeader = ({ onSearch, onClickLogo }) => {
         </button>
       </header>
 
+      {/* sidebar */}
       <aside
-        className={`${styles.side_menu} ${
-          openSideMenu ? styles.show : styles.hide
-        }`}
+        className={openSideMenu ? styles.sidebar_show : styles.sidebar_hide}
       >
-        <SideMenu />
+        <ul className={styles.list}>
+          <li className={styles.menu}>
+            <i className="fa-solid fa-house"></i>
+            <span>홈</span>
+          </li>
+          <li className={styles.menu}>
+            <i className="fa-solid fa-compass"></i>
+            <span>탐색</span>
+          </li>
+          <li className={styles.menu}>
+            <img src="./images/subscription.svg" alt="" />
+            <span>구독</span>
+          </li>
+        </ul>
+
+        <div className={styles.overlay}></div>
       </aside>
     </>
   );
