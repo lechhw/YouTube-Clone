@@ -22,6 +22,19 @@ class YouTube {
     });
     return response.data.items;
   }
+
+  // 키워드 검색
+  async search(keyword) {
+    const response = await this.youtube.get('search', {
+      params: {
+        part: 'snippet',
+        maxResults: 30,
+        q: keyword,
+        type: 'video',
+      },
+    });
+    return response.data.items.map((item) => ({ ...item, id: item.videoId }));
+  }
 }
 
 export default YouTube;
