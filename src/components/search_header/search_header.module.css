@@ -8,7 +8,6 @@
 .header {
   position: sticky;
   top: 0;
-  justify-content: space-between;
   padding: 5px 20px;
   height: 61px;
   background-color: #fff;
@@ -33,6 +32,7 @@
 .input_group {
   width: 40%;
   height: 38px;
+  margin-left: 20px;
 }
 
 .input {
@@ -64,23 +64,6 @@
   width: 80%;
 }
 
-.login_button {
-  font-size: 16px;
-  padding: 0 8px;
-  height: 38px;
-  border: 1px solid #065fd4;
-  color: #065fd4;
-  transition: transform 200ms ease-in-out;
-}
-
-.login_button:active {
-  transform: scale(0.98);
-}
-
-.login_button .span {
-  margin-left: 8px;
-}
-
 /* side menu */
 
 .sidebar_hide {
@@ -93,7 +76,7 @@
 
 .list {
   position: fixed;
-  width: 20vw;
+  width: 240px;
   height: 100%;
   padding: 10px 0;
   overflow: hidden;
@@ -126,4 +109,22 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 0;
+  }
+
+  .logo_img {
+    width: 100px;
+  }
+
+  .input_group {
+    margin-left: 5px;
+  }
+
+  .search_button img {
+    width: 15px;
+  }
 }

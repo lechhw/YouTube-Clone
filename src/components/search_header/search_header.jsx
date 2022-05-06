@@ -69,11 +69,6 @@ const SearchHeader = ({ onSearch, onClickLogo }) => {
             <img src="./images/search.svg" alt="search" />
           </button>
         </div>
-
-        <button className={styles.login_button}>
-          <i className="fa-regular fa-circle-user"></i>
-          <span className={styles.span}>로그인</span>
-        </button>
       </header>
 
       {/* sidebar */}
