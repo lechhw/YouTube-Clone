@@ -18,6 +18,10 @@ const SearchHeader = ({ onSearch, onClickLogo }) => {
     const keyword = inputRef.current.value;
     onSearch(keyword);
     inputRef.current.value = '';
+
+    if (openSideMenu) {
+      setOpenSideMenu(false);
+    }
   };
 
   const onClick = () => {
