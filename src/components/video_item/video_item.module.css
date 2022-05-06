@@ -2,6 +2,14 @@
   width: calc(100% / 4);
 }
 
+.list {
+  width: 100%;
+}
+
+.grid {
+  width: calc(100% / 4);
+}
+
 .card {
   padding: 0 8px 16px 8px;
   cursor: pointer;
