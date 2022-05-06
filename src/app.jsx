@@ -8,6 +8,11 @@ function App({ youtube }) {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
+  const onClickLogo = () => {
+    setSelectedVideo(null);
+    youtube.popularList().then((videos) => setVideos(videos));
+  };
+
   // click된 비디오 setSelectedVideo 에 담기
   const onClickVideo = useCallback((video) => {
     setSelectedVideo(video);
@@ -30,7 +35,7 @@ function App({ youtube }) {
 
   return (
     <main className={styles.app}>
-      <SearchHeader onSearch={search} />
+      <SearchHeader onSearch={search} onClickLogo={onClickLogo} />
       <div className={styles.content}>
         {selectedVideo && (
           <div className={styles.detail}>

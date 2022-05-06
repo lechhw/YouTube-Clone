@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './search_header.module.css';
 
-const SearchHeader = ({ onSearch }) => {
+const SearchHeader = ({ onSearch, onClickLogo }) => {
   const inputRef = React.createRef();
 
   const handleSearch = () => {
@@ -26,9 +26,12 @@ const SearchHeader = ({ onSearch }) => {
         <button className={styles.menu_button} type="button">
           <i className="fa-solid fa-bars"></i>
         </button>
-        <div>
-          <img className={styles.logo_img} src="./images/logo.png" alt="logo" />
-        </div>
+        <img
+          onClick={onClickLogo}
+          className={styles.logo_img}
+          src="./images/logo.png"
+          alt="logo"
+        />
       </div>
 
       <div className={styles.input_group}>
