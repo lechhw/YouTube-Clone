@@ -36,7 +36,7 @@
 }
 
 .input {
-  flex-basis: 100%;
+  width: 100%;
   height: 100%;
   padding: 5px 20px;
   margin: 0;
@@ -62,6 +62,10 @@
 .search_button img {
   display: block;
   width: 80%;
+}
+
+.input_group_mobile {
+  display: none;
 }
 
 /* side menu */
@@ -113,18 +117,30 @@
 
 @media screen and (max-width: 768px) {
   .header {
-    padding: 0;
+    padding: 10px;
+    justify-content: space-between;
+  }
+
+  .menu_button {
+    font-size: 20px;
   }
 
   .logo_img {
+    top: 0;
     width: 100px;
   }
 
   .input_group {
-    margin-left: 5px;
+    display: flex;
+    width: 55%;
+    height: 38px;
+  }
+
+  .input {
+    padding: 5px;
   }
 
   .search_button img {
-    width: 15px;
+    width: 20px;
   }
 }
