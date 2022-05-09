@@ -1,6 +1,26 @@
+.header,
+.logo,
+.input_group {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  padding: 5px 20px;
+  height: 61px;
+  background-color: #fff;
+  border-bottom: 1px solid #efefef;
+  z-index: 10;
+}
+
 .dark {
   background-color: black;
   color: white;
+}
+.header.dark {
+  border-bottom: 0;
 }
 
 .dark button {
@@ -17,23 +37,6 @@
 .white {
   background-color: white;
   color: black;
-}
-
-.header,
-.logo,
-.input_group {
-  display: flex;
-  align-items: center;
-}
-
-.header {
-  position: sticky;
-  top: 0;
-  padding: 5px 20px;
-  height: 61px;
-  background-color: #fff;
-  border-bottom: 1px solid #efefef;
-  z-index: 10;
 }
 
 .menu_button {
