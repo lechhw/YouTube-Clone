@@ -194,6 +194,8 @@
 
   .input {
     padding: 5px;
+    border-radius: 0;
+    margin: 0;
   }
 
   .search_button img {
