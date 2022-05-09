@@ -1,3 +1,46 @@
+.app {
+  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+}
+.writer {
+  position: relative;
+  bottom: 20px;
+  left: 20px;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.app_white {
+  background-color: white;
+  border-color: darkgray;
+  color: black;
+}
+
+.app_dark {
+  background-color: black;
+  color: white;
+}
+
+.app_dark .mode_button {
+  background-color: black;
+  color: white;
+  border-color: darkgrey;
+  box-shadow: rgba(251, 249, 249, 0.777) 0px 1px 4px;
+}
+
+.mode_button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  font-size: 1em;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  z-index: 100;
+  transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+}
+
 .content {
   display: flex;
   padding: 20px;

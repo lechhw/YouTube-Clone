@@ -1,3 +1,24 @@
+.dark {
+  background-color: black;
+  color: white;
+}
+
+.dark button {
+  background-color: black;
+  color: white;
+}
+
+.dark input {
+  background-color: black;
+  color: white;
+  border-color: darkgray;
+}
+
+.white {
+  background-color: white;
+  color: black;
+}
+
 .header,
 .logo,
 .input_group {
@@ -25,8 +46,15 @@
 
 .logo_img {
   display: block;
+  width: 40px;
+  margin-right: 5px;
+}
+
+.title {
   position: relative;
-  top: -2px;
+  top: 4px;
+  font-size: 1.5rem;
+  letter-spacing: -0.05em;
 }
 
 .input_group {
@@ -43,6 +71,10 @@
   border: 1px solid #efefef;
   font-size: 1.1rem;
   outline: none;
+}
+
+.dark .search_button {
+  background-color: darkgrey;
 }
 
 .search_button {
@@ -76,6 +108,18 @@
 
 .sidebar_show {
   display: block;
+  background-color: white;
+  color: black;
+}
+
+.dark .list {
+  background-color: black;
+  color: white;
+}
+
+.white .list {
+  background-color: white;
+  color: black;
 }
 
 .list {
@@ -101,6 +145,10 @@
   background-color: #efefef;
 }
 
+.dark .menu:hover {
+  background-color: darkgray;
+}
+
 .menu span {
   margin-left: 15px;
 }
@@ -123,16 +171,21 @@
 
   .menu_button {
     font-size: 20px;
+    color: black;
   }
 
   .logo_img {
     top: 0;
-    width: 100px;
+    width: 30px;
+  }
+
+  .title {
+    font-size: 1.2rem;
   }
 
   .input_group {
     display: flex;
-    width: 55%;
+    width: 60%;
     height: 38px;
   }
 

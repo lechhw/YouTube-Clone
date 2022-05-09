@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import styles from './search_header.module.css';
 
-const SearchHeader = ({ onSearch, onClickLogo }) => {
+const SearchHeader = ({ onSearch, onClickLogo, display }) => {
   const inputRef = React.createRef();
   const [openSideMenu, setOpenSideMenu] = useState(false);
+  const displayType = display === 'dark' ? styles.dark : styles.white;
 
   const returnToHome = () => {
     setOpenSideMenu(false);
@@ -36,7 +37,7 @@ const SearchHeader = ({ onSearch, onClickLogo }) => {
 
   return (
     <>
-      <header className={styles.header}>
+      <header className={`${styles.header} ${displayType}`}>
         <div className={styles.logo}>
           <button
             onClick={toggleSideMenu}
@@ -51,6 +52,7 @@ const SearchHeader = ({ onSearch, onClickLogo }) => {
             src="./images/logo.png"
             alt="logo"
           />
+          <h1 className={styles.title}>YouTube</h1>
         </div>
 
         <div className={styles.input_group}>
@@ -73,7 +75,9 @@ const SearchHeader = ({ onSearch, onClickLogo }) => {
 
       {/* sidebar */}
       <aside
-        className={openSideMenu ? styles.sidebar_show : styles.sidebar_hide}
+        className={`${
+          openSideMenu ? styles.sidebar_show : styles.sidebar_hide
+        } ${displayType}`}
       >
         <ul className={styles.list}>
           <li className={styles.menu} onClick={returnToHome}>
@@ -85,7 +89,7 @@ const SearchHeader = ({ onSearch, onClickLogo }) => {
             <span>탐색</span>
           </li>
           <li className={styles.menu}>
-            <img src="./images/subscription.svg" alt="" />
+            <i className="fa-solid fa-bookmark"></i>
             <span>구독</span>
           </li>
         </ul>

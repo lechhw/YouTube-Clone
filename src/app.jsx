@@ -7,6 +7,11 @@ import VideoList from './components/video_list/video_list';
 function App({ youtube }) {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(darkMode ? false : true);
+  };
 
   const onClickLogo = () => {
     setSelectedVideo(null);
@@ -34,8 +39,21 @@ function App({ youtube }) {
   }, [youtube]);
 
   return (
-    <main className={styles.app}>
-      <SearchHeader onSearch={search} onClickLogo={onClickLogo} />
+    <main
+      className={`${styles.app} ${
+        darkMode ? styles.app_dark : styles.app_white
+      } `}
+    >
+      <button className={styles.mode_button} onClick={toggleDarkMode}>
+        <i className="fa-solid fa-moon"></i>
+      </button>
+
+      <SearchHeader
+        onSearch={search}
+        onClickLogo={onClickLogo}
+        display={darkMode ? 'dark' : 'white'}
+      />
+
       <div className={styles.content}>
         {selectedVideo && (
           <div className={styles.detail}>
@@ -50,6 +68,8 @@ function App({ youtube }) {
           />
         </div>
       </div>
+
+      <p className={styles.writer}>2022/05 * LeeChangHwan</p>
     </main>
   );
 }

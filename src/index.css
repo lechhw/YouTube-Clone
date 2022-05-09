@@ -32,12 +32,3 @@ ul {
 h1 {
   margin: 0;
 }
-
-.writer p {
-  position: relative;
-  left: 5px;
-  bottom: 5px;
-  font-size: 12px;
-  color: gray;
-  font-style: italic;
-}
