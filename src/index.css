@@ -10,6 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
@@ -31,4 +32,9 @@ ul {
 
 h1 {
   margin: 0;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
 }
