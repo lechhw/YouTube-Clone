@@ -1,11 +1,38 @@
-.meta_data {
+.wrapper {
   max-width: 70%;
+  display: flex;
+  margin-top: 10px;
+}
+
+.logo {
+  flex-shrink: 0;
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 0.5rem;
+}
+
+.logo img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.meta_data {
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
   font-size: 18px;
   font-weight: 700;
-  margin-top: 10px;
+
   margin-bottom: 5px;
 }
 
