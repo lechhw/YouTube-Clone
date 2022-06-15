@@ -1,4 +1,31 @@
-.wrapper {
+.video_player {
+  margin-bottom: 0.5rem;
+}
+
+.meta_data {
+  display: flex;
+  flex-direction: column;
+}
+
+.main_info {
+  padding: 1rem 0;
+  border-bottom: 0.05rem solid #666666;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.3em;
+}
+
+.upload {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666666;
+}
+
+.sub_info {
   max-width: 70%;
   display: flex;
   margin-top: 10px;
@@ -24,36 +51,22 @@
   object-fit: cover;
 }
 
-.meta_data {
-  display: flex;
-  flex-direction: column;
-}
-
-.title {
-  font-size: 18px;
-  font-weight: 700;
-
-  margin-bottom: 5px;
+.sub_right {
+  padding-top: 0.5rem;
 }
 
 .channel {
   display: inline-block;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
-  margin-bottom: 10px;
-  color: #606060;
+  margin-bottom: 0.5rem;
+  color: #666666;
   cursor: pointer;
   white-space: pre-wrap;
 }
 
 .channel:hover {
   opacity: 0.7;
-}
-
-.desc {
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  white-space: pre-wrap;
 }
 
 @media screen and (max-width) {

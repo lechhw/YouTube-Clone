@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from './video_detail.module.css';
+import DescriptionBox from './description_box/description_box';
 
-// 비디오 플레이 화면
 const CHANNEL_DEFAULT_IMAGE = './images/channel.png';
 
 const VideoDetail = ({ video, video: { snippet } }) => {
   const url = snippet.channels || CHANNEL_DEFAULT_IMAGE;
 
   return (
-    <section>
+    <section className={styles.video_detail}>
       <iframe
         className={styles.video_player}
         type="text/html"
@@ -19,15 +19,22 @@ const VideoDetail = ({ video, video: { snippet } }) => {
         allowFullScreen
       ></iframe>
 
-      <div className={styles.wrapper}>
-        <div className={styles.logo}>
-          <img src={url} alt="channel" />
+      <div className={styles.meta_data}>
+        <div className={styles.main_info}>
+          <h1 className={styles.title}>{snippet.title}</h1>
+          <span className={styles.upload}>
+            {snippet.publishedAt.substr(0, 10)}
+          </span>
         </div>
 
-        <div className={styles.meta_data}>
-          <h1 className={styles.title}>{snippet.title}</h1>
-          <span className={styles.channel}>{snippet.channelTitle}</span>
-          <pre className={styles.desc}>{snippet.description}</pre>
+        <div className={styles.sub_info}>
+          <div className={styles.logo}>
+            <img src={url} alt="channel" />
+          </div>
+          <div className={styles.sub_right}>
+            <strong className={styles.channel}>{snippet.channelTitle}</strong>
+            <DescriptionBox video={video} />
+          </div>
         </div>
       </div>
     </section>
