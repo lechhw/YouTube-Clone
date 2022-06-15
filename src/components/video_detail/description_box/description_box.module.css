@@ -1,0 +1,21 @@
+.desc {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+}
+.desc.open {
+  display: block;
+}
+
+.desc.close {
+  display: none;
+}
+
+.button {
+  font-weight: 600;
+  color: #666666;
+}
+
+.button:hover {
+  opacity: 0.7;
+}
