@@ -1,0 +1,92 @@
+@value ytubeBlack,ytubeDarkBlack,ytubeWhite,ytubeWhiteGrey,ytubeGrey from "../../../common/style.css";
+@value Mobile from "../../../common/size.css";
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3.6rem;
+  padding: 0.3rem 1.2rem;
+  background-color: ytubeWhite;
+}
+
+/* dark mode */
+.header.dark {
+  background-color: ytubeBlack;
+}
+
+/* back button */
+.backBtn {
+  font-size: 1.2rem;
+  color: ytubeBlack;
+}
+
+.backBtn:hover,
+.backBtn:active {
+  color: ytubeGrey;
+}
+
+.header.dark .backBtn {
+  color: ytubeGrey;
+}
+
+.header.dark .backBtn:hover,
+.header.dark .backBtn:active {
+  color: ytubeWhite;
+}
+
+/* search form */
+.form {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  margin-left: 3rem;
+  border: 0.03rem solid ytubeGrey;
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  padding: 0.4rem 1rem;
+  border: 0;
+  font-size: 1rem;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.header.dark .input {
+  background-color: ytubeDarkBlack;
+  color: ytubeWhite;
+}
+
+.searchBtn {
+  font-size: 1rem;
+  padding: 0.4rem 0.6rem;
+  height: 100%;
+  background-color: ytubeWhite;
+  border-left: 0.03rem solid ytubeGrey;
+}
+
+.searchBtn:hover,
+.searchBtn:active {
+  background-color: ytubeWhiteGrey;
+}
+
+.header.dark .searchBtn {
+  background-color: ytubeBlack;
+  color: ytubeGrey;
+}
+
+.header.dark .searchBtn:hover,
+.header.dark .searchBtn:active {
+  color: ytubeWhite;
+}
+
+@media screen and (max-width: Mobile) {
+  .header {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+}

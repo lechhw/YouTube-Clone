@@ -1,204 +1,105 @@
-.header,
-.logo,
-.input_group {
-  display: flex;
-  align-items: center;
-}
+@value ytubeBlack,ytubeDarkBlack,ytubeWhite,ytubeWhiteGrey,ytubeGrey from "../../common/style.css";
+@value Mobile from "../../common/size.css";
 
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: sticky;
   top: 0;
-  padding: 5px 20px;
-  height: 61px;
-  background-color: #fff;
-  border-bottom: 1px solid #efefef;
+  height: 3.6rem;
+  padding: 0.3rem 1.2rem;
+  background-color: ytubeWhite;
   z-index: 10;
 }
 
-.dark {
-  background-color: black;
-  color: white;
-}
+/* dark mode */
+
 .header.dark {
-  border-bottom: 0;
+  background-color: ytubeBlack;
+  color: ytubeWhite;
 }
 
-.dark button {
-  background-color: black;
-  color: white;
-}
-
-.dark input {
-  background-color: black;
-  color: white;
-  border-color: darkgray;
-}
-
-.white {
-  background-color: white;
-  color: black;
-}
-
-.menu_button {
+/* logo */
+.logo {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 23px;
-  padding: 5px 12px;
+  align-items: end;
+  cursor: pointer;
 }
 
-.logo_img {
+.logoImg {
   display: block;
-  width: 40px;
-  margin-right: 5px;
+  width: 2.2rem;
 }
 
 .title {
-  position: relative;
-  top: 4px;
   font-size: 1.5rem;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.08em;
 }
 
-.input_group {
-  width: 40%;
-  height: 38px;
-  margin-left: 20px;
-}
-
-.input {
-  width: 100%;
-  height: 100%;
-  padding: 5px 20px;
-  margin: 0;
-  border: 1px solid #efefef;
-  font-size: 1.1rem;
-  outline: none;
-}
-
-.dark .search_button {
-  background-color: darkgrey;
-}
-
-.search_button {
+/* icon wrapper */
+.iconWrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  height: 100%;
-  background-color: #efefef;
-  transition: transform 200ms ease-in-out;
 }
 
-.search_button:active {
-  transform: scale(0.98);
+/* search button */
+.searchBtn {
+  font-size: 1.2rem;
+  color: ytubeGrey;
+  margin-right: 0.9em;
 }
 
-.search_button img {
-  display: block;
-  width: 80%;
+.searchBtn:hover,
+.searchBtn:active {
+  color: ytubeBlack;
 }
 
-.input_group_mobile {
-  display: none;
+.header.dark .searchBtn:hover,
+.header.dark .searchBtn:active {
+  color: ytubeWhite;
 }
 
-/* side menu */
-
-.sidebar_hide {
-  display: none;
+/* icon button */
+.iconBtn {
+  font-size: 1.4rem;
+  color: ytubeGrey;
+  margin-right: 0.8em;
 }
 
-.sidebar_show {
-  display: block;
-  background-color: white;
-  color: black;
+.iconBtn:last-child {
+  margin-right: 0;
 }
 
-.dark .list {
-  background-color: black;
-  color: white;
+.iconBtn:hover,
+.iconBtn:active {
+  color: ytubeBlack;
 }
 
-.white .list {
-  background-color: white;
-  color: black;
+.header.dark .iconBtn:hover,
+.header.dark .iconBtn:active {
+  color: ytubeWhite;
 }
 
-.list {
-  position: fixed;
-  width: 240px;
-  height: 100%;
-  padding: 10px 0;
-  overflow: hidden;
-  z-index: 10;
-  margin: 0;
-  background-color: white;
-}
-
-.menu {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 50px;
-  padding: 0 18px;
-}
-
-.menu:hover {
-  background-color: #efefef;
-}
-
-.dark .menu:hover {
-  background-color: darkgray;
-}
-
-.menu span {
-  margin-left: 15px;
-}
-
-.overlay {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-@media screen and (max-width: 768px) {
+/* responsive: Mobile */
+@media screen and (max-width: Mobile) {
   .header {
-    padding: 10px;
-    justify-content: space-between;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
   }
 
-  .menu_button {
-    font-size: 20px;
-    color: black;
-  }
-
-  .logo_img {
-    top: 0;
-    width: 30px;
+  .logoImg {
+    width: 1.9rem;
   }
 
   .title {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
-  .input_group {
-    display: flex;
-    width: 60%;
-    height: 38px;
+  .searchBtn {
+    font-size: 1.1rem;
   }
 
-  .input {
-    padding: 5px;
-    border-radius: 0;
-    margin: 0;
-  }
-
-  .search_button img {
-    width: 20px;
+  .iconBtn {
+    font-size: 1.3rem;
   }
 }

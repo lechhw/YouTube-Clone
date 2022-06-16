@@ -1,0 +1,51 @@
+@value ytubeBlack,ytubeDarkBlack,ytubeWhite,ytubeWhiteGrey,ytubeGrey from "../../../common/style.css";
+
+.form {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 2.3rem;
+  border: 0.03rem solid ytubeGrey;
+}
+
+/* input */
+.input {
+  width: 100%;
+  height: 100%;
+  padding: 0.4rem 1rem;
+  border: 0;
+  font-size: 1rem;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.form.dark .input {
+  background-color: ytubeDarkBlack;
+  color: ytubeWhite;
+}
+
+/* button */
+.button {
+  font-size: 1rem;
+  padding: 0.5rem 0.8rem;
+  height: 100%;
+  background-color: ytubeWhite;
+  border-left: 0.03rem solid ytubeGrey;
+}
+
+.button:hover,
+.button:active {
+  background-color: ytubeWhiteGrey;
+}
+
+.form.dark .button {
+  background-color: ytubeBlack;
+  color: ytubeGrey;
+}
+
+.form.dark .button:hover,
+.form.dark .button:active {
+  color: ytubeWhite;
+}
