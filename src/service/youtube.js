@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 class YouTube {
   constructor(httpURL) {
     this.youtube = httpURL;
