@@ -1,8 +1,11 @@
+@value ytubeGrey from "../../../common/style.css";
+
 .desc {
   font-family: 'Roboto', sans-serif;
   font-size: 0.8rem;
   white-space: pre-wrap;
 }
+
 .desc.open {
   display: block;
 }
@@ -13,7 +16,7 @@
 
 .button {
   font-weight: 600;
-  color: #666666;
+  color: ytubeGrey;
 }
 
 .button:hover {

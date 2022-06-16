@@ -5,7 +5,7 @@ const DescriptionBox = ({ video, video: { snippet } }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className={styles.desc_box}>
+    <div className={styles.container}>
       <pre className={`${styles.desc} ${open ? styles.open : styles.close}`}>
         {snippet.description}
       </pre>
