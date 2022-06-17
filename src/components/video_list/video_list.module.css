@@ -1,5 +1,38 @@
+@value Tablet, Tablet_S, Mobile from "../../common/size.css";
+
 .list {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
+  padding-top: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.list.grid {
+  padding: 1.2rem;
+}
+
+/* responsive: Tablet */
+@media screen and (max-width: Tablet) {
+  .list {
+    padding-top: 1rem;
+    margin-left: 1.5rem;
+  }
+
+  .list.grid {
+    margin-left: 0;
+    padding: 1.2rem;
+  }
+}
+
+/* responsive: Mobile */
+@media screen and (max-width: Mobile) {
+  .list {
+    margin-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .list.grid {
+    padding: 1rem 0.5rem;
+  }
 }

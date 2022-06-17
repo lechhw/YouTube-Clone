@@ -13,8 +13,6 @@
   z-index: 10;
 }
 
-/* dark mode */
-
 .header.dark {
   background-color: ytubeBlack;
   color: ytubeWhite;

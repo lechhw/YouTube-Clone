@@ -1,24 +1,41 @@
-.video {
-  width: calc(100% / 4);
-}
+@value ytubeGrey from "../../common/style.css";
+@value Tablet, Tablet_S, Mobile from "../../common/size.css";
 
-.list {
+.video.list {
   width: 100%;
 }
 
-.grid {
+.video.grid {
   width: calc(100% / 4);
 }
 
-.card {
-  padding: 0 8px 16px 8px;
+/* card */
+.video.grid .card {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.5rem 1rem 0.5rem;
   cursor: pointer;
 }
 
-.thumbnail {
+.video.list .card {
+  display: flex;
+  margin-bottom: 0.6rem;
+}
+
+/* thumbnail */
+.video.grid .thumbnail {
   display: block;
   width: 100%;
   margin-bottom: 1rem;
+  cursor: pointer;
+  transition: opacity 200ms ease-in-out;
+}
+
+.video.list .thumbnail {
+  width: 10.5rem;
+  height: 5.8rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
   transition: opacity 200ms ease-in-out;
 }
 
@@ -26,23 +43,26 @@
   opacity: 0.7;
 }
 
-.wrapper {
+/* data */
+.data {
+  width: 100%;
   display: flex;
 }
 
+/* logo */
 .logo {
   flex-shrink: 0;
   position: relative;
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 2.3rem;
+  height: 2.3rem;
+  margin-right: 0.5rem;
   border-radius: 50%;
   overflow: hidden;
-  margin-right: 0.5rem;
 }
 
 .logo img {
-  display: block;
   position: absolute;
+  display: block;
   top: 0;
   left: 0;
   width: 100%;
@@ -50,23 +70,46 @@
   object-fit: cover;
 }
 
+.video.list .logo {
+  display: none;
+}
+
+/* title */
 .title {
+  font-size: 0.9rem;
+  margin: 0.3rem 0;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  font-size: 1rem;
-  margin-bottom: 5px;
 }
 
-.channel {
+.video.list .title {
   font-size: 0.9rem;
-  color: #606060;
 }
 
-@media screen and (max-width: 768px) {
-  .video {
+/* misc */
+.misc {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: ytubeGrey;
+}
+
+@media screen and (max-width: Tablet) {
+  .video.grid {
+    width: calc(100% / 3);
+  }
+}
+
+@media screen and (max-width: Tablet_S) {
+  .video.grid {
+    width: calc(100% / 2);
+  }
+}
+
+@media screen and (max-width: Mobile) {
+  .video.grid {
     width: 100%;
   }
 }

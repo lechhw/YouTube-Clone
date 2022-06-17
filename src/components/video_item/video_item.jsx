@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import styles from './video_item.module.css';
+import moment from 'moment';
 
 const CHANNEL_DEFAULT_IMAGE = './images/channel.png';
 const VideoItem = memo(
@@ -19,14 +20,17 @@ const VideoItem = memo(
             alt="thumbnail"
           />
 
-          <div className={styles.wrapper}>
+          <div className={styles.data}>
             <div className={styles.logo}>
               <img src={url} alt="channel logo" />
             </div>
 
             <div className={styles.info}>
               <h1 className={styles.title}>{snippet.title}</h1>
-              <span className={styles.channel}>{snippet.channelTitle}</span>
+
+              <span className={styles.misc}>{`${snippet.channelTitle}﹒${moment(
+                snippet.publishedAt.substr(0, 10)
+              ).fromNow()}`}</span>
             </div>
           </div>
         </div>

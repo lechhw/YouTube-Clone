@@ -1,39 +1,53 @@
-.video_player {
+@value ytubeGrey from "../../common/style.css";
+@value Tablet, Tablet_S, Mobile from "../../common/size.css";
+
+.videoDetail {
+  padding-top: 1.5rem;
+  padding-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.videoPlayer {
+  width: 100%;
+  height: 30rem;
   margin-bottom: 0.5rem;
 }
 
-.meta_data {
+/* info */
+.info {
   display: flex;
   flex-direction: column;
+  padding-bottom: 1rem;
+  border-bottom: 0.05rem solid ytubeGrey;
 }
 
-.main_info {
+/* main info */
+.mainInfo {
   padding: 1rem 0;
-  border-bottom: 0.05rem solid #666666;
+  border-bottom: 0.05rem solid ytubeGrey;
   margin-bottom: 1rem;
 }
 
 .title {
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-size: 1.2rem;
   margin-bottom: 0.3em;
 }
 
 .upload {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: #666666;
+  color: ytubeGrey;
 }
 
-.sub_info {
+/* sub info */
+.subInfo {
   max-width: 70%;
   display: flex;
-  margin-top: 10px;
 }
 
 .logo {
-  flex-shrink: 0;
   position: relative;
+  flex-shrink: 0;
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
@@ -42,8 +56,8 @@
 }
 
 .logo img {
-  display: block;
   position: absolute;
+  display: block;
   top: 0;
   left: 0;
   width: 100%;
@@ -51,26 +65,54 @@
   object-fit: cover;
 }
 
-.sub_right {
+.subWrapper {
   padding-top: 0.5rem;
 }
 
 .channel {
-  display: inline-block;
-  font-size: 1rem;
-  font-weight: 700;
+  display: block;
   margin-bottom: 0.5rem;
-  color: #666666;
-  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
   white-space: pre-wrap;
+  cursor: pointer;
 }
 
 .channel:hover {
   opacity: 0.7;
 }
 
-@media screen and (max-width) {
-  .meta_data {
+/* responsive: Tablet */
+@media screen and (max-width: Tablet) {
+  .videoDetail {
+    margin-right: 0;
+  }
+
+  .videoPlayer {
+    height: 30rem;
+  }
+
+  .info {
     max-width: 100%;
+  }
+}
+
+/* responsive: Tablet-S */
+@media screen and (max-width: Tablet_S) {
+  .videoPlayer {
+    height: 24rem;
+  }
+}
+
+/* responsive: Mobile */
+@media screen and (max-width: Mobile) {
+  .videoDetail {
+    padding-top: 1rem;
+    padding-right: 1rem;
+    margin-left: 1rem;
+  }
+
+  .videoPlayer {
+    height: 20rem;
   }
 }

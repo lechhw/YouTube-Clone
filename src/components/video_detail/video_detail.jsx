@@ -8,30 +8,29 @@ const VideoDetail = ({ video, video: { snippet } }) => {
   const url = snippet.channels || CHANNEL_DEFAULT_IMAGE;
 
   return (
-    <section className={styles.video_detail}>
+    <section className={styles.videoDetail}>
       <iframe
-        className={styles.video_player}
+        className={styles.videoPlayer}
         type="text/html"
-        width="100%"
-        height="500px"
         src={`https://www.youtube.com/embed/${video.id}`}
         frameBorder="0"
         allowFullScreen
       ></iframe>
 
-      <div className={styles.meta_data}>
-        <div className={styles.main_info}>
+      <div className={styles.info}>
+        <div className={styles.mainInfo}>
           <h1 className={styles.title}>{snippet.title}</h1>
           <span className={styles.upload}>
             {snippet.publishedAt.substr(0, 10)}
           </span>
         </div>
 
-        <div className={styles.sub_info}>
+        <div className={styles.subInfo}>
           <div className={styles.logo}>
             <img src={url} alt="channel" />
           </div>
-          <div className={styles.sub_right}>
+
+          <div className={styles.subWrapper}>
             <strong className={styles.channel}>{snippet.channelTitle}</strong>
             <DescriptionBox video={video} />
           </div>

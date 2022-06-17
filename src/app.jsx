@@ -9,10 +9,6 @@ function App({ youtube }) {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
 
-  const toggleDarkMode = () => {
-    setDarkMode(darkMode ? false : true);
-  };
-
   const onClickLogo = () => {
     setSelectedVideo(null);
     youtube.popularList().then((videos) => setVideos(videos));
@@ -20,6 +16,7 @@ function App({ youtube }) {
 
   // click된 비디오 setSelectedVideo 에 담기
   const onClickVideo = useCallback((video) => {
+    window.scrollTo(0, 0);
     setSelectedVideo(video);
   }, []);
 
@@ -39,22 +36,14 @@ function App({ youtube }) {
   }, [youtube]);
 
   return (
-    <main
-      className={`${styles.app} ${
-        darkMode ? styles.app_dark : styles.app_white
-      } `}
-    >
-      <button className={styles.mode_button} onClick={toggleDarkMode}>
-        <i className="fa-solid fa-moon"></i>
-      </button>
-
+    <div className={`${styles.app} ${darkMode && styles.dark} `}>
       <SearchHeader
         onSearch={search}
         onClickLogo={onClickLogo}
-        display={darkMode ? 'dark' : 'white'}
+        darkMode={darkMode}
       />
 
-      <div className={styles.content}>
+      <main className={styles.contents}>
         {selectedVideo && (
           <div className={styles.detail}>
             <VideoDetail video={selectedVideo} />
@@ -67,10 +56,16 @@ function App({ youtube }) {
             display={selectedVideo ? 'list' : 'grid'}
           />
         </div>
-      </div>
+      </main>
 
-      <p className={styles.writer}>2022/05 * LeeChangHwan</p>
-    </main>
+      <button className={styles.modeBtn} onClick={() => setDarkMode(!darkMode)}>
+        <i className="fa-solid fa-moon"></i>
+      </button>
+
+      <footer className={styles.footer}>
+        <p>2022.05 by LeeChangHwan</p>
+      </footer>
+    </div>
   );
 }
 
