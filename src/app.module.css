@@ -1,4 +1,4 @@
-@value ytubeBlack,ytubeDarkBlack,ytubeWhite,ytubeWhiteGrey,ytubeGrey from "./common/style.css";
+@value ytubeBlack,ytubeDarkBlack,ytubeWhite,ytubeWhiteGrey,ytubeGrey,ytubeRed from "./common/style.css";
 @value Tablet, Tablet_S, Mobile from "./common/size.css";
 
 .app {
@@ -26,6 +26,28 @@
 
 .list {
   flex: 1 1 40%;
+}
+
+/* loading spinner */
+.loading {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 5px solid ytubeGrey;
+  border-top: 5px solid ytubeRed;
+  border-radius: 50%;
+  animation-name: loading;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 /* mode button */
@@ -66,5 +88,11 @@
 @media screen and (max-width: Tablet) {
   .content {
     flex-direction: column;
+  }
+}
+
+@keyframes loading {
+  100% {
+    transform: rotate(360deg);
   }
 }

@@ -9,10 +9,15 @@ function App({ youtube }) {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const onClickLogo = () => {
+    setLoading(true);
     setSelectedVideo(null);
-    youtube.popularList().then((videos) => setVideos(videos));
+    youtube.popularList().then((videos) => {
+      setVideos(videos);
+      setLoading(false);
+    });
   };
 
   // click된 비디오 setSelectedVideo 에 담기
@@ -24,10 +29,12 @@ function App({ youtube }) {
   // 키워드 검색
   const search = useCallback(
     (keyword) => {
+      setLoading(true);
       if (keyword) {
         youtube.search(keyword).then((videos) => {
           setVideos(videos);
           setSelectedVideo(null);
+          setLoading(false);
         });
       }
     },
@@ -47,24 +54,32 @@ function App({ youtube }) {
         darkMode={darkMode}
       />
 
-      <main className={styles.contents}>
-        {selectedVideo && (
-          <div className={styles.detail}>
-            <VideoDetail video={selectedVideo} />
-          </div>
-        )}
-        <div className={styles.list}>
-          {videos === undefined ? (
-            <SearchError />
-          ) : (
-            <VideoList
-              videos={videos}
-              onClickVideo={onClickVideo}
-              display={selectedVideo ? 'list' : 'grid'}
-            />
+      {!loading && (
+        <main className={styles.contents}>
+          {selectedVideo && (
+            <div className={styles.detail}>
+              <VideoDetail video={selectedVideo} />
+            </div>
           )}
+          <div className={styles.list}>
+            {videos === undefined ? (
+              <SearchError />
+            ) : (
+              <VideoList
+                videos={videos}
+                onClickVideo={onClickVideo}
+                display={selectedVideo ? 'list' : 'grid'}
+              />
+            )}
+          </div>
+        </main>
+      )}
+
+      {loading && (
+        <div className={styles.loading}>
+          <div className={styles.spinner}></div>
         </div>
-      </main>
+      )}
 
       <button className={styles.modeBtn} onClick={() => setDarkMode(!darkMode)}>
         <i className="fa-solid fa-moon"></i>
