@@ -1,0 +1,21 @@
+@value ytubeDarkBlack,ytubeWhite,ytubeGrey from "../../common/style.css";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  overflow-y: hidden;
+}
+
+.container p {
+  color: ytubeGrey;
+}
+
+.container.dark {
+  background-color: ytubeDarkBlack;
+  color: ytubeWhite;
+}

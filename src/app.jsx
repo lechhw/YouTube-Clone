@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import styles from './app.module.css';
+import SearchError from './components/search_error/search_error';
 import SearchHeader from './components/search_header/search_header';
 import VideoDetail from './components/video_detail/video_detail';
 import VideoList from './components/video_list/video_list';
@@ -21,14 +22,17 @@ function App({ youtube }) {
   }, []);
 
   // 키워드 검색
-  const search = useCallback((keyword) => {
-    if (keyword) {
-      youtube.search(keyword).then((videos) => {
-        setVideos(videos);
-        setSelectedVideo(null);
-      });
-    }
-  }, []);
+  const search = useCallback(
+    (keyword) => {
+      if (keyword) {
+        youtube.search(keyword).then((videos) => {
+          setVideos(videos);
+          setSelectedVideo(null);
+        });
+      }
+    },
+    [youtube]
+  );
 
   // 인기동영상
   useEffect(() => {
@@ -50,11 +54,15 @@ function App({ youtube }) {
           </div>
         )}
         <div className={styles.list}>
-          <VideoList
-            videos={videos}
-            onClickVideo={onClickVideo}
-            display={selectedVideo ? 'list' : 'grid'}
-          />
+          {videos === undefined ? (
+            <SearchError />
+          ) : (
+            <VideoList
+              videos={videos}
+              onClickVideo={onClickVideo}
+              display={selectedVideo ? 'list' : 'grid'}
+            />
+          )}
         </div>
       </main>
 
