@@ -86,7 +86,7 @@
 
 /* responsive: Tablet */
 @media screen and (max-width: Tablet) {
-  .content {
+  .contents {
     flex-direction: column;
   }
 }
