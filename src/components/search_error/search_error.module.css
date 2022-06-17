@@ -1,4 +1,4 @@
-@value ytubeDarkBlack,ytubeWhite,ytubeGrey from "../../common/style.css";
+@value ytubeGrey from "../../common/style.css";
 
 .container {
   display: flex;
@@ -13,9 +13,4 @@
 
 .container p {
   color: ytubeGrey;
-}
-
-.container.dark {
-  background-color: ytubeDarkBlack;
-  color: ytubeWhite;
 }
