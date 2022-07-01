@@ -59,7 +59,8 @@ Youtube의 기능인 (인기동영상, 검색기능, 영상 재생) 기능을 �
 
 # Solution
 
-- Postman 에서 api 테스트 후 받아온 fetch 코드를 비동기 통신 라이브러리인 Axios 를 사용하여 좀 더 가독성을 좋게 하였습니다.
+## ✅ YouTube API
+Postman 에서 api 테스트 후 받아온 fetch 코드를 비동기 통신 라이브러리인 Axios 를 사용하여 좀 더 가독성을 좋게 하였습니다.
 
 ```js
 class YouTube {
@@ -101,7 +102,8 @@ export default YouTube;
 
 <br>
 
-- matchMedia() 메서드를 사용하여 화면 크기에 맞게 검색창을 변경하였습니다.
+## ✅ Responsive UI
+`matchMedia()` 함수를 사용하여 화면 크기에 맞게 검색창을 변경하였습니다.
 
 ```js
 const SearchHeader = ({ onSearch, onClickLogo, darkMode }) => {
@@ -183,7 +185,8 @@ export default SearchHeader;
 
 <br>
 
-- 사용자가 데이터를 받아오는 동안 로딩 중임을 알 수 있게끔 로딩 스피너를 구현하였습니다.
+## ✅ Loading Spinor
+사용자가 데이터를 받아오는 동안 로딩 중임을 알 수 있게끔 로딩 스피너를 구현하였습니다.
 
 ```js
 function App({ youtube }) {
@@ -233,7 +236,8 @@ export default App;
 
 <br>
 
-- 해당 검색 결과가 없을 때 검색 결과가 없다는 내용을 보여주어 에러 핸들링을 해주었습니다.
+## ✅ Error Handling
+해당 검색 결과가 없을 때 검색 결과가 없다는 내용을 보여주어 에러 핸들링을 해주었습니다.
 
 ```js
 function App({ youtube }) {
@@ -278,7 +282,8 @@ export default SearchError;
 
 <br>
 
-- 사용자가 디스플레이 모드를 기호에 따라 사용할 수 있게 하기 위해 다크모드 기능을 추가하였습니다.
+## ✅ Dark Mode
+사용자가 디스플레이 모드를 기호에 따라 사용할 수 있게 하기 위해 다크모드 기능을 추가하였습니다.
 
 ```js
 function App({ youtube }) {
